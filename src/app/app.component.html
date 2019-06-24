@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <span>Mapify</span>
+</mat-toolbar>
+
+<button *ngIf="isAuthenticated" (click)="getData()" mat-stroked-button color="primary">Network</button>
+<button *ngIf="isAuthenticated" (click)="getDataLarge()" mat-stroked-button>Large Network (Slow)</button>
+<button *ngIf="isAuthenticated" (click)="logout()" mat-stroked-button>Logout</button>
+
+
+<div id="progress" *ngIf="loading">
+  <mat-spinner style="margin:0 auto;" [diameter]="50"></mat-spinner>
+</div>
+
+<div id="visualization" *ngIf="nodes"></div>
